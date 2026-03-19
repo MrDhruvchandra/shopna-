@@ -1,10 +1,10 @@
-import React from "react";
 import Img1 from "../../assets/kids/kids1.jpg";
 import Img2 from "../../assets/kids/kids2.jpg";
 import Img3 from "../../assets/kids/kids3.jpg";
 import Img4 from "../../assets/kids/kids4.jpg";
 import Img5 from "../../assets/kids/kids5.jpg";
 import { FaStar } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 const ProductsData = [
   {
@@ -49,7 +49,7 @@ const ProductsData = [
   },
 ];
 
-const Kids = () => {
+const Kids = ({ handleOrderPopup }) => {
   return (
     <div id="kids" className="mt-14 mb-12">
       <div className="container">
@@ -62,7 +62,7 @@ const Kids = () => {
             Our Kids Collection
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Discover our best-rated kids' products, carefully selected to bring joy and comfort to your little ones.
+            Discover our best-rated kids&apos; products, carefully selected to bring joy and comfort to your little ones.
           </p>
         </div>
         {/* Body section */}
@@ -94,7 +94,11 @@ const Kids = () => {
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md">
+            <button
+              type="button"
+              onClick={handleOrderPopup}
+              className="text-center mt-10 cursor-pointer bg-primary text-white py-2 px-6 rounded-md hover:scale-[1.02] transition-transform duration-200 focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
               View All Products
             </button>
           </div>
@@ -102,6 +106,10 @@ const Kids = () => {
       </div>
     </div>
   );
+};
+
+Kids.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Kids;

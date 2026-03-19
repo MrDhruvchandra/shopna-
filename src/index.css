@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+
+  .dark body {
+    @apply bg-gray-950 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/40;
+  }
+
+  /* Fallback for line-clamp usage (Tailwind line-clamp plugin not installed) */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

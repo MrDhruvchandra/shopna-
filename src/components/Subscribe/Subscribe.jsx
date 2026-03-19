@@ -12,6 +12,9 @@ const BannerImg = {
 };
 
 const Subscribe = () => {
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
   return (
     <div id="contact"
       data-aos="zoom-in"
@@ -23,12 +26,36 @@ const Subscribe = () => {
           <h1 className="text-2xl !text-center sm:text-left sm:text-4xl font-semibold">
             Get Notified About New Products
           </h1>
-          <input
+          <form
             data-aos="fade-up"
-            type="text"
-            placeholder="Enter your email"
-            className="w-full p-3"
-          />
+            onSubmit={(e) => {
+              e.preventDefault();
+              setMessage("Thanks! You are subscribed.");
+              setEmail("");
+              setTimeout(() => setMessage(""), 2500);
+            }}
+            className="flex flex-col sm:flex-row gap-3"
+          >
+            <label htmlFor="subscribe-email" className="sr-only">
+              Email
+            </label>
+            <input
+              id="subscribe-email"
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="flex-1 rounded-full border border-gray-300 dark:border-gray-500 dark:bg-gray-800 px-4 py-3 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white px-6 py-3 rounded-full font-medium"
+            >
+              Subscribe
+            </button>
+          </form>
+          {message ? <p className="text-sm text-green-600">{message}</p> : null}
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import SariImg1 from "../../assets/sari/saree1.jpg";
 import SariImg2 from "../../assets/sari/saree2.jpg";
 import SariImg3 from "../../assets/sari/saree3.jpg";

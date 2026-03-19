@@ -1,4 +1,3 @@
-import React from "react";
 import footerLogo from "../../assets/logo.png";
 import Banner from "../../assets/website/footer-pattern.jpg";
 import {
@@ -37,6 +36,8 @@ const FooterLinks = [
 ];
 
 const Footer = () => {
+  const isExternal = (href) => href.startsWith("http");
+
   return (
     <div style={BannerImg} className="text-white">
       <div className="container">
@@ -45,10 +46,10 @@ const Footer = () => {
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
               <img src={footerLogo} alt="" className="max-w-[50px]" />
-              SHOPNA
+              SURYANATH DRESSES
             </h1>
             <p>
-              Welcome to Shopna, your ultimate destination for trendy and stylish apparel. From casual wear to formal attire, we've got you covered with the latest fashion trends.
+              Welcome to Suryanath Dresses, your ultimate destination for trendy and stylish apparel. From casual wear to formal attire, we&apos;ve got you covered with the latest fashion trends.
             </p>
           </div>
 
@@ -61,11 +62,15 @@ const Footer = () => {
                 </h1>
                 <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
+                    <li key={link.title}>
+                      <a
+                        href={link.link}
+                        target={isExternal(link.link) ? "_blank" : undefined}
+                        rel={isExternal(link.link) ? "noopener noreferrer" : undefined}
+                        className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      >
+                        {link.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -78,11 +83,15 @@ const Footer = () => {
                 </h1>
                 <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
+                    <li key={link.title}>
+                      <a
+                        href={link.link}
+                        target={isExternal(link.link) ? "_blank" : undefined}
+                        rel={isExternal(link.link) ? "noopener noreferrer" : undefined}
+                        className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      >
+                        {link.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -95,13 +104,13 @@ const Footer = () => {
                 <a href="https://wa.me/+917985010058" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp className="text-3xl" />
                 </a>
-                <a href="https://www.instagram.com/dhruv.0.1.1.0/" target="blank">
+                <a href="https://www.instagram.com/dhruv.0.1.1.0/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <FaInstagram className="text-3xl" />
                 </a>
-                <a href="https://www.linkedin.com/in/dhruvchandra-m-b71155229/" target="blank">
+                <a href="https://www.linkedin.com/in/dhruvchandra-m-b71155229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <FaLinkedin className="text-3xl" />
                 </a>
-                <a href="https://github.com/MrDhruvchandra" target="blank">
+                <a href="https://github.com/MrDhruvchandra" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <FaGithub className="text-3xl" />
                 </a>
               </div>

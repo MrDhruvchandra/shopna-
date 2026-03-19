@@ -1,10 +1,10 @@
-import React from "react";
 import Img1 from "../../assets/sari/saree1.jpg";
 import Img2 from "../../assets/sari/saree2.jpg";
 import Img3 from "../../assets/sari/saree3.jpg";
 import Img4 from "../../assets/sari/saree4.jpg";
 import Img5 from "../../assets/sari/saree5.jpg";
 import { FaStar } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 const ProductsData = [
   {
@@ -49,7 +49,7 @@ const ProductsData = [
   },
 ];
 
-const Saari = () => {
+const Saari = ({ handleOrderPopup }) => {
   return (
     <div id="saari" className="mt-14 mb-12">
       <div className="container">
@@ -94,7 +94,11 @@ const Saari = () => {
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md">
+            <button
+              type="button"
+              onClick={handleOrderPopup}
+              className="text-center mt-10 cursor-pointer bg-primary text-white py-2 px-6 rounded-md hover:scale-[1.02] transition-transform duration-200 focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
               View All Sarees
             </button>
           </div>
@@ -102,6 +106,10 @@ const Saari = () => {
       </div>
     </div>
   );
+};
+
+Saari.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Saari;

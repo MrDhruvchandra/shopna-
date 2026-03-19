@@ -1,10 +1,10 @@
-import React from "react";
 import Img1 from "../../assets/men/men1.jpg";
 import Img2 from "../../assets/men/men2.jpg";
 import Img3 from "../../assets/men/men3.jpg";
 import Img4 from "../../assets/men/men4.jpg";
 import Img5 from "../../assets/men/men5.jpg";
 import { FaStar } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 const ProductsData = [
   {
@@ -49,7 +49,7 @@ const ProductsData = [
   },
 ];
 
-const Men = () => {
+const Men = ({ handleOrderPopup }) => {
   return (
     <div id="men" className="mt-14 mb-12">
       <div className="container">
@@ -59,10 +59,10 @@ const Men = () => {
             Top Selling Apparel for Men
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
-            Our Men's Collection
+            Our Men&apos;s Collection
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Discover our range of top-rated men's clothing, specially curated to add style and comfort to your wardrobe.
+            Discover our range of top-rated men&apos;s clothing, specially curated to add style and comfort to your wardrobe.
           </p>
         </div>
         {/* Body section */}
@@ -94,7 +94,11 @@ const Men = () => {
           </div>
           {/* view all button */}
           <div className="flex justify-center">
-            <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md">
+            <button
+              type="button"
+              onClick={handleOrderPopup}
+              className="text-center mt-10 cursor-pointer bg-primary text-white py-2 px-6 rounded-md hover:scale-[1.02] transition-transform duration-200 focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
               View All Products
             </button>
           </div>
@@ -102,6 +106,10 @@ const Men = () => {
       </div>
     </div>
   );
+};
+
+Men.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Men;

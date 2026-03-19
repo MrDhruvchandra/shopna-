@@ -1,8 +1,8 @@
-import React from "react";
 import Image1 from "../../assets/hero/women.png";
 import Image2 from "../../assets/hero/shopping.png";
 import Image3 from "../../assets/hero/sale.png";
 import Slider from "react-slick";
+import PropTypes from "prop-types";
 
 const ImageList = [
   {
@@ -45,7 +45,7 @@ const Hero = ({ handleOrderPopup }) => {
   return (
     <div id="home" className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
       {/* background pattern */}
-      <div className="h-[700px] w-[700px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z[8]"></div>
+      <div className="h-[700px] w-[700px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-[8]"></div>
       {/* hero section */}
       <div className="container pb-8 sm:pb-0">
         <Slider {...settings}>
@@ -104,6 +104,10 @@ const Hero = ({ handleOrderPopup }) => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Hero;

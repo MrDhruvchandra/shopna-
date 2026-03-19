@@ -1,4 +1,3 @@
-import React from "react";
 import BannerImg from "../../assets/women/women2.jpg";
 import { GrSecure } from "react-icons/gr";
 import { IoFastFood } from "react-icons/io5";
@@ -27,7 +26,7 @@ const Banner = () => {
               data-aos="fade-up"
               className="text-sm text-gray-500 tracking-wide leading-5"
             >
-              Discover amazing discounts on our top-quality products this winter! Enjoy up to 50% off on selected items. Don't miss out on these fantastic deals!
+              Discover amazing discounts on our top-quality products this winter! Enjoy up to 50% off on selected items. Don&apos;t miss out on these fantastic deals!
             </p>
             <div className="flex flex-col gap-4">
               <div data-aos="fade-up" className="flex items-center gap-4">
